@@ -1066,6 +1066,8 @@ typedef struct RecompLauncherCModOption {
     /* Additive presentation hints; zero preserves the existing widgets. */
     int  slider;
     int  allow_wheel;
+    /* Decimal slider display; stored values remain integers. Zero means 1. */
+    int64_t display_divisor;
 } RecompLauncherCModOption;
 
 typedef struct RecompLauncherCModChoice {
