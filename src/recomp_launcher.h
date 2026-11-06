@@ -968,6 +968,7 @@ typedef enum RecompLauncherCModOptionType {
      * host should surface why via last_error). Appended additively; only
      * games whose providers supply a TEXT option ever render one. */
     RECOMP_MOD_OPTION_TEXT = 3,
+    RECOMP_MOD_OPTION_BINDING = 4,
 } RecompLauncherCModOptionType;
 
 typedef struct RecompLauncherCModPackage {
@@ -1062,6 +1063,9 @@ typedef struct RecompLauncherCModOption {
      * UI only has to grey the control out -- it never cross-references
      * options itself. Example: ticking "Instant" makes the speed box inert. */
     int  disabled;
+    /* Additive presentation hints; zero preserves the existing widgets. */
+    int  slider;
+    int  allow_wheel;
 } RecompLauncherCModOption;
 
 typedef struct RecompLauncherCModChoice {
